@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 PUNKS - UNIVERSAL MATCH ENGINE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="window">
+        <div class="title-bar">
+            <div class="title-bar-text">💻 404 PUNKS - UNIVERSAL MATCH ENGINE</div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close">X</button>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-btn active">🔸 LAYERS</button>
+            <button class="tab-btn">🔸 CREATE NFT</button>
+            <button class="tab-btn">🔸 COLLECTION</button>
+        </div>
+
+        <div class="window-body">
+            
+            <fieldset>
+                <legend>ADD NEW LAYER</legend>
+                <div class="input-row">
+                    <input type="text" placeholder="[ IMAGE URL ]" id="imageUrl">
+                </div>
+                <div class="input-row split">
+                    <input type="text" placeholder="[ VALUE ]" id="layerValue">
+                    <select id="layerType">
+                        <option value="background">Background</option>
+                        <option value="base">Base</option>
+                        <option value="nose">Nose</option>
+                        <option value="face">Face</option>
+                        <option value="neck">Neck</option>
+                        <option value="mouth">Mouth</option>
+                        <option value="eyes">Eyes</option>
+                        <option value="ear">Ear</option>
+                        <option value="beard">Beard</option>
+                    </select>
+                </div>
+                
+                <div class="radio-group">
+                    <label><input type="radio" name="gender" checked> 🔸 MALE</label>
+                    <label><input type="radio" name="gender"> 🔸 FEMALE</label>
+                    <label><input type="radio" name="gender"> 🔸 BOTH</label>
+                </div>
+
+                <button class="action-btn">🔸 ADD TO LIBRARY</button>
+            </fieldset>
+
+            <div class="layers-list">
+                <div class="accordion-item"><span>[Background]</span><span class="count">1 layers ▼</span></div>
+                <div class="accordion-item"><span>[Base]</span><span class="count">11 layers ▼</span></div>
+                <div class="accordion-item"><span>[Nose]</span><span class="count">2 layers ▼</span></div>
+                <div class="accordion-item"><span>[Face]</span><span class="count">6 layers ▼</span></div>
+                <div class="accordion-item"><span>[Neck]</span><span class="count">5 layers ▼</span></div>
+                <div class="accordion-item"><span>[Mouth]</span><span class="count">7 layers ▼</span></div>
+                <div class="accordion-item"><span>[Eyes]</span><span class="count">27 layers ▼</span></div>
+                <div class="accordion-item"><span>[Ear]</span><span class="count">2 layers ▼</span></div>
+                <div class="accordion-item"><span>[Beard]</span><span class="count">12 layers ▼</span></div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
