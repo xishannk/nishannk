@@ -1,0 +1,96 @@
+body {
+    background: linear-gradient(135deg, #0a0a0a 0%, #2e003e 100%);
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.window {
+    background: #1a1a1a;
+    border: 1px solid #4a148c;
+    width: 100%;
+    max-width: 700px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.title-bar {
+    background: #2e003e;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.tabs {
+    display: flex;
+    background: #111;
+    padding: 5px 5px 0 5px;
+}
+
+.tab-btn {
+    background: #222;
+    color: #aaa;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.tab-btn.active {
+    background: #4a148c;
+    color: #fff;
+}
+
+.window-body {
+    padding: 20px;
+}
+
+fieldset {
+    border: 1px solid #4a148c;
+    padding: 15px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+legend {
+    color: #b39ddb;
+    font-weight: bold;
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 8px;
+    background: #000;
+    border: 1px solid #4a148c;
+    color: #fff;
+    margin-top: 5px;
+}
+
+.action-btn {
+    width: 100%;
+    padding: 10px;
+    background: #4a148c;
+    color: #fff;
+    border: none;
+    margin-top: 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.accordion-item {
+    background: #222;
+    border: 1px solid #4a148c;
+    padding: 10px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
