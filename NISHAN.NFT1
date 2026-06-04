@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Punks Lab - Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>404 PUNKS LAB</h1>
+        <p>Customize your character layers easily</p>
+        
+        <div class="main-content">
+            <div class="canvas-area">
+                <div class="preview-box">
+                    <canvas id="punkCanvas" width="400" height="400"></canvas>
+                </div>
+                <button class="btn" onclick="downloadImage()">Download Character</button>
+            </div>
+
+            <div class="control-area">
+                <h3>Select Layers</h3>
+                
+                <div class="layer-group">
+                    <label>Background:</label>
+                    <select id="bgSelect" onchange="drawCharacter()">
+                        <option value="https://picsum.photos/id/10/400/400">Default BG</option>
+                        <option value="https://picsum.photos/id/11/400/400">Blue BG</option>
+                        <option value="https://picsum.photos/id/28/400/400">Forest BG</option>
+                    </select>
+                </div>
+
+                <div class="layer-group">
+                    <label>Base Character:</label>
+                    <select id="bodySelect" onchange="drawCharacter()">
+                        <option value="https://i.ibb.co/68Xyv4B/punk-body.png">Standard Punk</option>
+                    </select>
+                </div>
+
+                <div class="layer-group">
+                    <label>Eyes / Glasses:</label>
+                    <select id="eyesSelect" onchange="drawCharacter()">
+                        <option value="">None</option>
+                        <option value="https://i.ibb.co/8Y4yv8G/glasses.png">Cool Glasses</option>
+                    </select>
+                </div>
+
+                <div class="layer-group">
+                    <label>Hats / Hair:</label>
+                    <select id="hairSelect" onchange="drawCharacter()">
+                        <option value="">None</option>
+                        <option value="https://i.ibb.co/3s6v7mB/hat.png">Red Cap</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Punks Lab - Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>404 PUNKS LAB</h1>
+        <p>Customize your character layers easily</p>
+        
+        <div class="main-content">
+            <div class="canvas-area">
+                <div class="preview-box">
+                    <canvas id="punkCanvas" width="400" height="400"></canvas>
+                </div>
+                <button class="btn" onclick="downloadImage()">Download Character</button>
+            </div>
+
+            <div class="control-area">
+                <h3>Select Layers</h3>
+                
+                <div class="layer-group">
+                    <label>Background:</label>
+                    <select id="bgSelect" onchange="drawCharacter()">
+                        <option value="https://picsum.photos/id/10/400/400">Default BG</option>
+                        <option value="https://picsum.photos/id/11/400/400">Blue BG</option>
+                        <option value="https://picsum.photos/id/28/400/400">Forest BG</option>
+                    </select>
+                </div>
+
+                <div class="layer-group">
+                    <label>Base Character:</label>
+                    <select id="bodySelect" onchange="drawCharacter()">
+                        <option value="https://i.ibb.co/68Xyv4B/punk-body.png">Standard Punk</option>
+                    </select>
+                </div>
+
+                <div class="layer-group">
+                    <label>Eyes / Glasses:</label>
+                    <select id="eyesSelect" onchange="drawCharacter()">
+                        <option value="">None</option>
+                        <option value="https://i.ibb.co/8Y4yv8G/glasses.png">Cool Glasses</option>
+                    </select>
+                </div>
+
+                <div class="layer-group">
+                    <label>Hats / Hair:</label>
+                    <select id="hairSelect" onchange="drawCharacter()">
+                        <option value="">None</option>
+                        <option value="https://i.ibb.co/3s6v7mB/hat.png">Red Cap</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
