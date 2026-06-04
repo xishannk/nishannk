@@ -1,6 +1,0 @@
-// Universal Match Engine - Core Interactions
-document.querySelectorAll('.accordion-item').forEach(item => {
-    item.addEventListener('click', () => {
-        alert(item.querySelector('span').innerText + " সেকশনটি ক্লিক করা হয়েছে!");
-    });
-});
