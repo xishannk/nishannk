@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 PUNKS - UNIVERSAL MATCH ENGINE</title>
     <style>
-        /* --- CSS ডিজাইন (পার্পল ও ব্ল্যাক থিম) --- */
+        /* --- CSS ডিজাইন (পার্পল ও ব্ল্যাক প্রফেশনাল থিম) --- */
         body {
-            background: linear-gradient(135deg, #0a0a0a 0%, #2e003e 100%);
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0026 100%);
             color: #e0e0e0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
@@ -19,11 +19,11 @@
         }
 
         .window {
-            background: #1a1a1a;
+            background: #141414;
             border: 1px solid #4a148c;
             width: 100%;
-            max-width: 700px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            max-width: 800px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
             border-radius: 8px;
             overflow: hidden;
         }
@@ -41,13 +41,13 @@
 
         .tabs {
             display: flex;
-            background: #111;
+            background: #0d0d0d;
             padding: 5px 5px 0 5px;
             border-bottom: 1px solid #222;
         }
 
         .tab-btn {
-            background: #222;
+            background: #1a1a1a;
             color: #aaa;
             border: none;
             padding: 10px 20px;
@@ -73,6 +73,7 @@
             margin-bottom: 20px;
             color: #fff;
             border-radius: 6px;
+            background: #111;
         }
 
         legend {
@@ -134,12 +135,12 @@
         .layers-list {
             display: flex;
             flex-direction: column;
-            gap: 2px;
+            gap: 4px;
         }
 
         .accordion-item {
-            background: #222;
-            border: 1px solid #4a148c;
+            background: #1a1a1a;
+            border: 1px solid #333;
             padding: 12px;
             display: flex;
             justify-content: space-between;
@@ -147,28 +148,46 @@
             font-weight: bold;
             cursor: pointer;
             border-radius: 4px;
-            transition: background 0.2s;
+            transition: background 0.2s, border-color 0.2s;
         }
 
         .accordion-item:hover {
-            background: #2d2d2d;
+            background: #252525;
+            border-color: #4a148c;
         }
 
         .panel {
             padding: 15px;
-            background-color: #0b0b0b;
+            background-color: #080808;
             display: none;
             overflow: hidden;
             border: 1px solid #4a148c;
             border-top: none;
             margin-bottom: 8px;
-            color: #b39ddb;
+            color: #e0e0e0;
             font-size: 13px;
             border-radius: 0 0 4px 4px;
         }
 
         .accordion-item.active + .panel {
             display: block;
+        }
+
+        /* লেয়ারের ভেতরের আইটেম লিস্ট ডিজাইন */
+        .layer-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px solid #222;
+        }
+        .layer-item:last-child {
+            border-bottom: none;
+        }
+        .item-url {
+            color: #b39ddb;
+            font-size: 11px;
+            word-break: break-all;
+            max-width: 70%;
         }
     </style>
 </head>
@@ -220,52 +239,85 @@
                 <button class="action-btn">🔸 ADD TO LIBRARY</button>
             </fieldset>
 
-            <!-- Accordion Layers List -->
+            <!-- Accordion Layers List (আসল লেয়ার ডাটা সহ) -->
             <div class="layers-list">
-                <div class="accordion-item"><span>[Background]</span><span class="count">1 layers ▼</span></div>
-                <div class="panel"><p>No background layers added yet. Put Image URL and click Add to Library.</p></div>
+                
+                <!-- Background Layer -->
+                <div class="accordion-item"><span>[Background]</span><span class="count" id="count-background">1 layers ▼</span></div>
+                <div class="panel" id="panel-background">
+                    <div class="layer-item"><span>Default BG</span><span class="item-url">https://i.ibb.co/example/bg.png</span></div>
+                </div>
 
-                <div class="accordion-item"><span>[Base]</span><span class="count">11 layers ▼</span></div>
-                <div class="panel"><p>Base layers configuration space.</p></div>
+                <!-- Base Layer -->
+                <div class="accordion-item"><span>[Base]</span><span class="count" id="count-base">11 layers ▼</span></div>
+                <div class="panel" id="panel-base">
+                    <div class="layer-item"><span>Standard Male</span><span class="item-url">https://i.ibb.co/example/base1.png</span></div>
+                    <div class="layer-item"><span>Dark Skin</span><span class="item-url">https://i.ibb.co/example/base2.png</span></div>
+                    <div class="layer-item"><span>Alien Base</span><span class="item-url">https://i.ibb.co/example/base3.png</span></div>
+                    <!-- বাকি লেয়ারগুলো জাভাস্ক্রিপ্ট দিয়ে বা ম্যানুয়ালি এখানে দেখা যাবে -->
+                </div>
 
-                <div class="accordion-item"><span>[Nose]</span><span class="count">2 layers ▼</span></div>
-                <div class="panel"><p>Nose elements setup.</p></div>
+                <!-- Nose Layer -->
+                <div class="accordion-item"><span>[Nose]</span><span class="count" id="count-nose">2 layers ▼</span></div>
+                <div class="panel" id="panel-nose">
+                    <div class="layer-item"><span>Standard Nose</span><span class="item-url">https://i.ibb.co/example/nose1.png</span></div>
+                    <div class="layer-item"><span>Small Nose</span><span class="item-url">https://i.ibb.co/example/nose2.png</span></div>
+                </div>
 
-                <div class="accordion-item"><span>[Face]</span><span class="count">6 layers ▼</span></div>
-                <div class="panel"><p>Face expressions and traits.</p></div>
+                <!-- Face Layer -->
+                <div class="accordion-item"><span>[Face]</span><span class="count" id="count-face">6 layers ▼</span></div>
+                <div class="panel" id="panel-face">
+                    <div class="layer-item"><span>Smile</span><span class="item-url">https://i.ibb.co/example/face1.png</span></div>
+                </div>
 
-                <div class="accordion-item"><span>[Neck]</span><span class="count">5 layers ▼</span></div>
-                <div class="panel"><p>Neck accessories list.</p></div>
+                <!-- Neck Layer -->
+                <div class="accordion-item"><span>[Neck]</span><span class="count" id="count-neck">5 layers ▼</span></div>
+                <div class="panel" id="panel-neck">
+                    <div class="layer-item"><span>Gold Chain</span><span class="item-url">https://i.ibb.co/example/neck1.png</span></div>
+                </div>
 
-                <div class="accordion-item"><span>[Mouth]</span><span class="count">7 layers ▼</span></div>
-                <div class="panel"><p>Mouth and teeth styles.</p></div>
+                <!-- Mouth Layer -->
+                <div class="accordion-item"><span>[Mouth]</span><span class="count" id="count-mouth">7 layers ▼</span></div>
+                <div class="panel" id="panel-mouth">
+                    <div class="layer-item"><span>Cigarette</span><span class="item-url">https://i.ibb.co/example/mouth1.png</span></div>
+                </div>
 
-                <div class="accordion-item"><span>[Eyes]</span><span class="count">27 layers ▼</span></div>
-                <div class="panel"><p>Eyes and glasses variations.</p></div>
+                <!-- Eyes Layer -->
+                <div class="accordion-item"><span>[Eyes]</span><span class="count" id="count-eyes">27 layers ▼</span></div>
+                <div class="panel" id="panel-eyes">
+                    <div class="layer-item"><span>VR Headset</span><span class="item-url">https://i.ibb.co/example/eyes1.png</span></div>
+                    <div class="layer-item"><span>3D Glasses</span><span class="item-url">https://i.ibb.co/example/eyes2.png</span></div>
+                </div>
 
-                <div class="accordion-item"><span>[Ear]</span><span class="count">2 layers ▼</span></div>
-                <div class="panel"><p>Earrings and ear traits.</p></div>
+                <!-- Ear Layer -->
+                <div class="accordion-item"><span>[Ear]</span><span class="count" id="count-ear">2 layers ▼</span></div>
+                <div class="panel" id="panel-ear">
+                    <div class="layer-item"><span>Earring</span><span class="item-url">https://i.ibb.co/example/ear1.png</span></div>
+                </div>
 
-                <div class="accordion-item"><span>[Beard]</span><span class="count">12 layers ▼</span></div>
-                <div class="panel"><p>Beard and facial hair options.</p></div>
+                <!-- Beard Layer -->
+                <div class="accordion-item"><span>[Beard]</span><span class="count" id="count-beard">12 layers ▼</span></div>
+                <div class="panel" id="panel-beard">
+                    <div class="layer-item"><span>Shadow Beard</span><span class="item-url">https://i.ibb.co/example/beard1.png</span></div>
+                </div>
             </div>
 
         </div>
     </div>
 
-    <!-- --- JavaScript লজিক (ক্লিক ফাংশন) --- -->
+    <!-- --- JavaScript লজিক (মেনু ওপেন এবং লাইভ লেয়ার অ্যাড করা) --- -->
     <script>
-        // অ্যাকর্ডিয়ন ওপেন/ক্লোজ করার কোড
+        // প্রতিটা লেয়ারের ড্রপডাউন ওপেন/বন্ধ করার ফাংশন
         document.querySelectorAll('.accordion-item').forEach(item => {
             item.addEventListener('click', () => {
                 item.classList.toggle('active');
             });
         });
 
-        // "ADD TO LIBRARY" বাটনের কোড
+        // "ADD TO LIBRARY" বাটনে ক্লিক করলে লাইভ লেয়ার যোগ করার লজিক
         document.querySelector('.action-btn').addEventListener('click', () => {
-            const url = document.getElementById('imageUrl').value;
-            const value = document.getElementById('layerValue').value;
+            const url = document.getElementById('imageUrl').value.trim();
+            const value = document.getElementById('layerValue').value.trim();
             const type = document.getElementById('layerType').value;
 
             if(!url || !value) {
@@ -273,8 +325,31 @@
                 return;
             }
 
-            alert("সফল হয়েছে!\nইউআরএল: " + url + "\nভ্যালু: " + value + "\nটাইপ: " + type + "\n\nলাইব্রেরিতে যুক্ত করা হচ্ছে...");
-            
+            // সঠিক প্যানেলটি খুঁজে বের করা
+            const targetPanel = document.getElementById(`panel-${type}`);
+            const targetCountSpan = document.getElementById(`count-${type}`);
+
+            if (targetPanel) {
+                // নতুন আইটেম তৈরি করে লিস্টে যোগ করা
+                const newItem = document.createElement('div');
+                newItem.className = 'layer-item';
+                newItem.innerHTML = `<span>${value}</span><span class="item-url">${url}</span>`;
+                
+                // যদি প্যানেলের ভেতর কোনো ডিফল্ট টেক্সট থাকে তা মুছে ফেলা
+                if(targetPanel.querySelector('p')) {
+                    targetPanel.innerHTML = '';
+                }
+                
+                targetPanel.appendChild(newItem);
+
+                // লেয়ার সংখ্যা ১ বাড়িয়ে দেওয়া
+                let currentCount = parseInt(targetCountSpan.innerText);
+                targetCountSpan.innerText = `${currentCount + 1} layers ▼`;
+
+                alert(`সফল হয়েছে!\n"${value}" লেয়ারটি [${type.toUpperCase()}] ক্যাটাগরিতে যুক্ত করা হয়েছে।`);
+            }
+
+            // ইনপুট বক্স খালি করা
             document.getElementById('imageUrl').value = '';
             document.getElementById('layerValue').value = '';
         });
