@@ -4,28 +4,193 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 PUNKS - UNIVERSAL MATCH ENGINE</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* --- CSS ডিজাইন (পার্পল ও ব্ল্যাক থিম) --- */
+        body {
+            background: linear-gradient(135deg, #0a0a0a 0%, #2e003e 100%);
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .window {
+            background: #1a1a1a;
+            border: 1px solid #4a148c;
+            width: 100%;
+            max-width: 700px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .title-bar {
+            background: #2e003e;
+            color: #fff;
+            padding: 12px;
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            font-size: 14px;
+            border-bottom: 1px solid #4a148c;
+        }
+
+        .tabs {
+            display: flex;
+            background: #111;
+            padding: 5px 5px 0 5px;
+            border-bottom: 1px solid #222;
+        }
+
+        .tab-btn {
+            background: #222;
+            color: #aaa;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: bold;
+            margin-right: 2px;
+            border-radius: 4px 4px 0 0;
+        }
+
+        .tab-btn.active {
+            background: #4a148c;
+            color: #fff;
+        }
+
+        .window-body {
+            padding: 20px;
+        }
+
+        fieldset {
+            border: 1px solid #4a148c;
+            padding: 15px;
+            margin-bottom: 20px;
+            color: #fff;
+            border-radius: 6px;
+        }
+
+        legend {
+            color: #b39ddb;
+            font-weight: bold;
+            padding: 0 10px;
+        }
+
+        .input-row {
+            margin-bottom: 12px;
+        }
+
+        .input-row.split {
+            display: flex;
+            gap: 10px;
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            background: #000;
+            border: 1px solid #4a148c;
+            color: #fff;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .radio-group {
+            margin: 15px 0;
+            display: flex;
+            gap: 20px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .radio-group label {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .action-btn {
+            width: 100%;
+            padding: 12px;
+            background: #4a148c;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .action-btn:hover {
+            background: #6a1b9a;
+        }
+
+        .layers-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .accordion-item {
+            background: #222;
+            border: 1px solid #4a148c;
+            padding: 12px;
+            display: flex;
+            justify-content: space-between;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .accordion-item:hover {
+            background: #2d2d2d;
+        }
+
+        .panel {
+            padding: 15px;
+            background-color: #0b0b0b;
+            display: none;
+            overflow: hidden;
+            border: 1px solid #4a148c;
+            border-top: none;
+            margin-bottom: 8px;
+            color: #b39ddb;
+            font-size: 13px;
+            border-radius: 0 0 4px 4px;
+        }
+
+        .accordion-item.active + .panel {
+            display: block;
+        }
+    </style>
 </head>
 <body>
 
     <div class="window">
+        <!-- Title Bar -->
         <div class="title-bar">
             <div class="title-bar-text">💻 404 PUNKS - UNIVERSAL MATCH ENGINE</div>
-            <div class="title-bar-controls">
-                <button aria-label="Minimize"></button>
-                <button aria-label="Maximize"></button>
-                <button aria-label="Close">X</button>
-            </div>
         </div>
 
+        <!-- Tabs -->
         <div class="tabs">
             <button class="tab-btn active">🔸 LAYERS</button>
             <button class="tab-btn">🔸 CREATE NFT</button>
             <button class="tab-btn">🔸 COLLECTION</button>
         </div>
 
+        <!-- Window Body -->
         <div class="window-body">
             
+            <!-- Add New Layer Box -->
             <fieldset>
                 <legend>ADD NEW LAYER</legend>
                 <div class="input-row">
@@ -55,20 +220,64 @@
                 <button class="action-btn">🔸 ADD TO LIBRARY</button>
             </fieldset>
 
+            <!-- Accordion Layers List -->
             <div class="layers-list">
                 <div class="accordion-item"><span>[Background]</span><span class="count">1 layers ▼</span></div>
+                <div class="panel"><p>No background layers added yet. Put Image URL and click Add to Library.</p></div>
+
                 <div class="accordion-item"><span>[Base]</span><span class="count">11 layers ▼</span></div>
+                <div class="panel"><p>Base layers configuration space.</p></div>
+
                 <div class="accordion-item"><span>[Nose]</span><span class="count">2 layers ▼</span></div>
+                <div class="panel"><p>Nose elements setup.</p></div>
+
                 <div class="accordion-item"><span>[Face]</span><span class="count">6 layers ▼</span></div>
+                <div class="panel"><p>Face expressions and traits.</p></div>
+
                 <div class="accordion-item"><span>[Neck]</span><span class="count">5 layers ▼</span></div>
+                <div class="panel"><p>Neck accessories list.</p></div>
+
                 <div class="accordion-item"><span>[Mouth]</span><span class="count">7 layers ▼</span></div>
+                <div class="panel"><p>Mouth and teeth styles.</p></div>
+
                 <div class="accordion-item"><span>[Eyes]</span><span class="count">27 layers ▼</span></div>
+                <div class="panel"><p>Eyes and glasses variations.</p></div>
+
                 <div class="accordion-item"><span>[Ear]</span><span class="count">2 layers ▼</span></div>
+                <div class="panel"><p>Earrings and ear traits.</p></div>
+
                 <div class="accordion-item"><span>[Beard]</span><span class="count">12 layers ▼</span></div>
+                <div class="panel"><p>Beard and facial hair options.</p></div>
             </div>
 
         </div>
     </div>
 
+    <!-- --- JavaScript লজিক (ক্লিক ফাংশন) --- -->
+    <script>
+        // অ্যাকর্ডিয়ন ওপেন/ক্লোজ করার কোড
+        document.querySelectorAll('.accordion-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+
+        // "ADD TO LIBRARY" বাটনের কোড
+        document.querySelector('.action-btn').addEventListener('click', () => {
+            const url = document.getElementById('imageUrl').value;
+            const value = document.getElementById('layerValue').value;
+            const type = document.getElementById('layerType').value;
+
+            if(!url || !value) {
+                alert("দয়া করে IMAGE URL এবং VALUE দুটিই সঠিকভাবে লিখুন!");
+                return;
+            }
+
+            alert("সফল হয়েছে!\nইউআরএল: " + url + "\nভ্যালু: " + value + "\nটাইপ: " + type + "\n\nলাইব্রেরিতে যুক্ত করা হচ্ছে...");
+            
+            document.getElementById('imageUrl').value = '';
+            document.getElementById('layerValue').value = '';
+        });
+    </script>
 </body>
 </html>
